@@ -111,4 +111,7 @@ body{
     .sidebar ul li i{
         font-size: 20px;
     }
+    .maincontent{
+        margin-left: 200px;
+    }
 }
