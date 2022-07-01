@@ -20,7 +20,7 @@ body{
     position: absolute;
     height: 50px;
     width: 100%;
-    background-color: #1533b9;
+    background-color: #7fc242;
     height: 100vh;
     z-index: 5;
     padding-top: 50px;
@@ -35,7 +35,7 @@ body{
     border-bottom: 1px solid rgb(17, 221, 27);
 }
 .sidebar ul li a{
-    color: rgb(21, 228, 228);
+    color: white;
     text-decoration: none;
   
 }
