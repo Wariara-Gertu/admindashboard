@@ -1,5 +1,11 @@
 <nav>
 			<ul>
+			<li>    
+					<a href="index.php">
+						<span>  <i class="fa fa-home"></i></span>
+						<span>Dashboard</span>
+					</a>
+				</li>
 				<li>
 					<a href="student.php">
 						<span>  <i class="fa fa-group"></i></span>
