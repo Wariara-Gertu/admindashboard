@@ -11,6 +11,34 @@ while($fetchuser = mysqli_fetch_array($queryuser))
     $course = $fetchuser['course'];
 }
 
+
+
+//update user records
+if(isset($_POST['updaterecords']))
+{
+    // fetch from data
+    $name = $_POST['fullname'];
+    $phoneNumber = $_POST['phonemuber'];
+    $emailaddress = $_POST['email'];
+    $formgender = $_POST['gender'];
+    $formcourse = $_POST['course'];
+
+    //update records
+    $updatequery = mysqli_query($conn, "UPDATE enrollment SET fullname='$name', 
+    phonemuber='$phoneNumber', email = '$emailaddress', gender='$formgender', course='$formcourse'
+    WHERE no='".$_GET['id']."' ");
+
+    if($updatequery)
+    {
+        echo "Data updated";
+    }
+    else
+    {
+        echo "Error occured";                                                
+    }
+    
+}
+
 ?>
 
 
@@ -47,7 +75,7 @@ while($fetchuser = mysqli_fetch_array($queryuser))
                         <div class="card-body">
 
                         <!-- add form code here-->
-                        <form action="enroll.php" method="POST">
+                        <form action="edit-enrollment.php" method="POST">
                       
                         
                       <div class="row">
@@ -82,7 +110,7 @@ while($fetchuser = mysqli_fetch_array($queryuser))
             <div class="mb-3 col-lg-6">
                         <label for="course" name="course" class="form-label">Course:</label>
                         <select  name="course" class="form-control"   >
-                        <option selected>--select your course--</option>    
+                        <option selected> <?php echo $course?></option>    
                             <option value="webdesign">Web design</option>
                             <option value="cybersecurity">Cyber Security</option>
                             <option value="datascience">Data science</option>
@@ -97,7 +125,7 @@ while($fetchuser = mysqli_fetch_array($queryuser))
 
 
 
-<button type="submit"  name = "submitbutton" class="btn btn-outline-primary">Update Record</button>
+<button type="submit"  name = "updaterecords" class="btn btn-outline-primary">Update Records</button>
  </div>
  </form>
 
