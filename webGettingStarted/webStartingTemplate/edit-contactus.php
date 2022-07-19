@@ -11,7 +11,7 @@ while($fetchuser = mysqli_fetch_array($querycontact))
     $phonenumber = $fetchuser['phonenumber'];
     $email = $fetchuser['email'];
     $message = $fetchuser['message'];
-    $createdat= $fetchuser['createdat'];
+   
 }
 
 
@@ -26,7 +26,7 @@ if(isset($_POST['updatecontactus']))
     $phone = $_POST['phonenumber'];
     $emailaddress = $_POST['email'];
     $text = $_POST['message'];
-    $create = $_POST['createdat'];
+    
 
     //update records
     $updatecontactus = mysqli_query($conn, "UPDATE contactus SET firstname='$name1', lastname='$name2', 
@@ -81,39 +81,40 @@ if(isset($_POST['updatecontactus']))
                  <div class="card-body">
 
                         <!-- add form code here-->
-                <form action="edit-contatus.php?id=<?php echo $id ?>" method="POST">
-                      
-                        
-                      <div class="row">
-                       <div class="mb-3 col-lg-6">
-                        <label for="firstname" class="form-label">First Name</label>
-                        <input type="text"  name = "firstname" value=<?php echo $firstname?> class="form-control" placeholder="Enter Your First Name">
-                    </div>
-                    <div class="row">
-                       <div class="mb-3 col-lg-6">
-                        <label for="lastname" class="form-label">Last Name</label>
-                        <input type="text"  name = "lastname" value=<?php echo $lastname?> class="form-control" placeholder="Enter Your last Name">
+                
+
+                        <form action="edit-contactus.php?id=<?php echo $id ?>" method="POST">
+                <div class="row">
+                    <div class="mb-3 col-lg-6">
+                        <label for="firtsname" class="form-label">First Name</label>
+                        <input type="text"  name="firstname"  value=<?php echo $firstname?> class="form-control" placeholder="Enter Your First Name">
                     </div>
                     <div class="mb-3 col-lg-6">
-                       <label for="phonenumber" class="form-label">Phone Number</label>
-                       <input type="text" name="phonenumber"  value=<?php echo $phonenumber?> class="form-control" placeholder="enter phonenumber">
+                       <label for="lastname" class="form-label">Last Name</label>
+                       <input type="text" name="lastname"  value=<?php echo $lastname?> class="form-control" placeholder="Enter Your Last Name">
                    </div>
                 </div>
-
                 <div class="row">
-                        <div class="mb-3 col-lg-6">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" name="email"  value=<?php echo $email?> class="form-control" placeholder="Enter Your Email">
-                        </div>
-                   <div class="row">
-                       <div class="mb-3 col-lg-6">
-                        <label for="message" class="form-label">Message</label>
-                        <input type="text"  name = "message" value=<?php echo $message?> class="form-control" placeholder="Enter Your Message">
+                    <div class="mb-3 col-lg-6">
+                        <label for="phonenumber" class="form-label">Phone Number</label>
+                        <input type="text"  name="phonenumber"  value=<?php echo $phonenumber?> class="form-control" placeholder="Enter Your Phone Number">
+                    </div>
+                    <div class="mb-3 col-lg-6">
+                       <label for="email" class="form-label">Email</label>
+                       <input type="email" name="email"  value=<?php echo $email?>  class="form-control" placeholder="Enter Your Email">
+                   </div>
+                </div>
+                <div class="row">
+                    <div class="mb-3 col-lg-12">
+                        <label for="message" class="Your Message">Your Message</label>        
+                        <textarea cols="30"  name="message"  value=<?php echo $message?> rows="5" class="form-control" ></textarea>
                     </div>
                 </div>
-        </form>
-            <button type="submit"  name = "updatecontactus" class="btn btn-outline-primary">Update Records</button>
-    </div>
+                
+
+                </form>     
+                <button type="submit"  name = "updatecontactus" class="btn btn-outline-primary">Update Records</button>
+            </div>
  
 
 
