@@ -51,7 +51,7 @@ $sqlfecthstudent = mysqli_query($conn,
                        <ul class="list-group">
                             <li class="list-group-item">Full Name: <span class="float-right badge badge-primary"><?php echo $fullname?></span></li>
                             <li class="list-group-item">Email: <span class="float-right  badge badge-secondary"><?php echo $email?></span> </li>
-                            <li class="list-group-item">Phone Number:<span class="float-right badge badge-danger"><?php echo $phone?></span> </li>
+                            <li class="list-group-item">Phone Number:<span class="float-right badge badge-primary"><?php echo $phone?></span> </li>
                         
                        </ul> 
 
@@ -67,7 +67,7 @@ $sqlfecthstudent = mysqli_query($conn,
                        <ul class="list-group">
                             <li class="list-group-item">Gender: <span class="float-right badge badge-primary"><?php echo $gender?></span></li>
                             <li class="list-group-item">Course: <span class="float-right  badge badge-secondary"><?php echo $course?></span> </li>
-                            <li class="list-group-item">Enrolled On:<span class="float-right badge badge-danger"><?php echo $createdat?></span> </li>
+                            <li class="list-group-item">Enrolled On:<span class="float-right badge badge-secondary"><?php echo $createdat?></span> </li>
                         
                        </ul> 
 
